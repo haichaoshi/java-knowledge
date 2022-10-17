@@ -65,6 +65,7 @@ Durability（Durability）：事务提交后，数据能持久化
 | Repeatable Read（RR）  | 可重复读，在一个事务中读到的数据始终保持一致   |
 | Serializable           | 串行化，同时只能执行一个事务                   |
 
+#### 并发问题
 
 脏读：一个事务读到了另一个事务未提交的数据。如下b事务age=10还未提交，a事务读到age=10。
 
@@ -87,6 +88,7 @@ Durability（Durability）：事务提交后，数据能持久化
 | RR           | no   | no         | yes  |
 | serializable | no   | no         | no   |
 
-#### 并发问题
-#### 安全性、性能与隔离级别的关系
 
+#### 安全性、性能与隔离级别的关系
+安全性： serializable > repeatable read > read committed > read uncommitted  
+性能 ： serializable < repeatable read < read committed < read uncommitted
